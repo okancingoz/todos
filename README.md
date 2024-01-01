@@ -1,6 +1,7 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
+<img width="3656" alt="todos" src="https://github.com/okancingoz/todos/assets/88890682/f8f3302d-b56d-4ee1-8d68-735e7c7ecfe7">
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
