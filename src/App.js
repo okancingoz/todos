@@ -3,6 +3,10 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import TodoCard from './components/TodoCard';
 import TodoEntry from './components/TodoEntry';
 import uuid from 'react-native-uuid';
+import {
+  readDataFromStorage,
+  saveDataToStorage,
+} from './services/AsyncStorageService';
 
 export const App = () => {
   const [todoList, setTodoList] = useState([]);
@@ -10,6 +14,11 @@ export const App = () => {
   const [activeTodoCounter, setActiveTodoCounter] = useState(todoList.length);
 
   useEffect(() => {
+    readDataFromStorage().then(data => setTodoList(data));
+  }, []);
+
+  useEffect(() => {
+    saveDataToStorage(todoList);
     handleActiveTodoCounter();
   }, [todoList]);
 
@@ -80,7 +89,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     margin: 16,
-   
+
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -95,6 +104,5 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '700',
     color: '#B0A695',
-   
   },
 });
